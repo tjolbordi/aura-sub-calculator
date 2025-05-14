@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA მონიტორინგის და განახლების სერვისის კალკულატორი</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AURA Basic</h1>
+            <p>მოდულების მხარდაჭერის და განახლების საბსქრიფშენის კალკულატორი</p>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">ძირითადი პარამეტრები</h2>
+            <div class="input-group">
+                <label for="basePrice">საბაზისო ფასი (X) დოლარში:</label>
+                <input type="number" id="basePrice" class="input-control" value="40" min="0" step="10" disabled>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">აირჩიეთ მოდულები</h2>
+            <div class="module-grid" id="moduleGrid">
+                <!-- Module cards will be inserted by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">აირჩიეთ მომხმარებლების რაოდენობა</h2>
+            <div class="user-tier-container">
+                <div class="user-tier-grid" id="userTiersContainer">
+                    <!-- User tier options will be inserted by JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">აირჩიეთ გადახდის ტიპი</h2>
+            <div class="contract-options" id="contractOptions">
+                <!-- Contract options will be inserted by JavaScript -->
+            </div>
+        </div>
+        
+        <button class="calculate-btn" id="calculateBtn">გამოთვალე ფასი</button>
+        
+        <div class="results" id="results">
+            <div class="result-header">
+                <h2 class="result-title">საბოლოო შედეგი</h2>
+                <div class="price-display" id="monthlyPrice">0 $</div>
+                <div class="price-period">ყოველთვიური გადასახადი</div>
+            </div>
+            
+            <div class="price-breakdown">
+                <div class="breakdown-item">
+                    <span class="breakdown-label">საბაზისო ფასი (X):</span>
+                    <span class="breakdown-value" id="basePriceDisplay">0 $</span>
+                </div>
+                <div class="breakdown-item">
+                    <span class="breakdown-label">მოდულების კოეფიციენტების ჯამი:</span>
+                    <span class="breakdown-value" id="coefficientSum">0</span>
+                </div>
+                <div class="breakdown-item">
+                    <span class="breakdown-label">მომხმარებლების კოეფიციენტი:</span>
+                    <span class="breakdown-value" id="userTierCoefficient">0</span>
+                </div>
+                <div class="breakdown-item">
+                    <span class="breakdown-label">საწყისი ყოველთვიური ფასი:</span>
+                    <span class="breakdown-value" id="initialMonthly">0 $</span>
+                </div>
+                <div class="breakdown-item">
+                    <span class="breakdown-label">ფასდაკლება:</span>
+                    <span class="breakdown-value" id="discountAmount">0%</span>
+                </div>
+                <div class="breakdown-item">
+                    <span class="breakdown-label">მთლიანი ხელშეკრულების ღირებულება:</span>
+                    <span class="breakdown-value" id="totalContract">0 $</span>
+                </div>
+            </div>
+            
+            <div class="included-features">
+                <h3 class="features-title">საბსქრიფშენში შედის:</h3>
+                <ul class="feature-list" id="featureList">
+                    <!-- Features will be inserted by JavaScript -->
+                </ul>
+            </div>
+        </div>
+        
+        <!-- <div class="disclaimer">
+            <p>შენიშვნა: ზოგადად თუ ვხედავთ რომ კლიენტი ბევრ მოდულს ნერგავს და ბევრად დიდი თანხა გამოსდის საბსქრიფშენი, შესაძლებელია საბაზისო თანხა შევამციროთ.</p>
+        </div> -->
+    </div>
+
+    <script src="constants.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
